@@ -2,6 +2,7 @@ package app.ui.console;
 
 import app.controller.RegisterAnimeController;
 import app.controller.RegisterShowController;
+import app.domain.model.Anime;
 import app.ui.console.utils.Utils;
 
 import java.util.ArrayList;

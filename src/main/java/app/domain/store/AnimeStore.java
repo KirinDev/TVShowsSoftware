@@ -11,12 +11,14 @@ public class AnimeStore {
 
     private Set<Anime> store = new HashSet<>();
 
+    public AnimeStore() { }
+
     public Anime create(String name, int aired, String genres, double duration, double score, int num_episodes, String studio, String type) {
         return new Anime(name, aired, genres, duration, score, num_episodes, studio, type);
     }
 
     public boolean add(Anime anime) {
-        return anime != null && !this.exists(anime) ?this.store.add(anime) : false;
+        return anime != null && !this.exists(anime) ? this.store.add(anime) : false;
     }
 
     public boolean remove(Anime anime) {
@@ -45,9 +47,9 @@ public class AnimeStore {
 
         for (Anime i : this.store) {
             if (i.getName().equals(anime.getName()))
-                return false;
+                return true;
         }
-        return true;
+        return false;
     }
 
     public boolean checkAired( int aired ) {

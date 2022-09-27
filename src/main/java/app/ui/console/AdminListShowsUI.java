@@ -5,16 +5,16 @@ import app.ui.console.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminUI implements Runnable {
+public class AdminListShowsUI implements Runnable {
 
-    public AdminUI() {}
+    public AdminListShowsUI() { }
 
     public void run() {
 
         List<MenuItem> options = new ArrayList<>();
-        options.add(new MenuItem("Register a TV show " , new AdminRegisterUI() ));
-        options.add(new MenuItem("Delete a TV show " , new AdminDeleteUI() ));
-        options.add(new MenuItem("Show list of shows " , new AdminListShowsUI() ));
+        options.add(new MenuItem("Show all animes " , new ListAllAnimeUI() ));
+        options.add(new MenuItem("Show all movies " , new ListAllMoviesUI() ));
+        options.add(new MenuItem("Show all series " , new ListAllSeriesUI() ));
 
         int option = 0;
         do {

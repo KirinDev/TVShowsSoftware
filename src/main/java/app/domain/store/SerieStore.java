@@ -11,6 +11,8 @@ public class SerieStore {
 
     private Set<Serie> store = new HashSet<>();
 
+    public SerieStore() { }
+
     public Serie create(String name, int aired, String genres, Double duration, Double score, int num_episodes) {
         return new Serie(name, aired, genres, duration, score, num_episodes);
     }
@@ -45,9 +47,9 @@ public class SerieStore {
 
         for (Serie i : this.store) {
             if (i.getName().equals(serie.getName()))
-                return false;
+                return true;
         }
-        return true;
+        return false;
     }
 
     public boolean checkAired( int aired ) {

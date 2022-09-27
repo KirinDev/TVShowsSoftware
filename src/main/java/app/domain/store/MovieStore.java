@@ -11,6 +11,8 @@ public class MovieStore {
 
     private Set<Movie> store = new HashSet<>();
 
+    public MovieStore() { }
+
     public Movie create(String name, int aired, String genres, Double duration, Double score) {
         return new Movie(name, aired, genres, duration, score);
     }
@@ -44,9 +46,9 @@ public class MovieStore {
 
         for (Movie i : this.store) {
             if (i.getName().equals(movie.getName()))
-                return false;
+                return true;
         }
-        return true;
+        return false;
     }
 
     public boolean checkAired( int aired ) {
