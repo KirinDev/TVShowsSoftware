@@ -20,7 +20,7 @@ public class ListAllAnimeController {
 
     public List<AnimeDTO> listAllAnime() {
         AnimeStore store = app.getCompany().getAniStore();
-        Set<Anime> lst = store.getAll();
+        List<Anime> lst = store.getAll();
         return mapper.toDTO(lst);
     }
 }

@@ -2,7 +2,6 @@ package app.ui.console;
 
 import app.controller.RegisterAnimeController;
 import app.controller.RegisterShowController;
-import app.domain.model.Anime;
 import app.ui.console.utils.Utils;
 
 import java.util.ArrayList;
@@ -53,7 +52,7 @@ public class RegisterAnimeUI implements Runnable {
 
     }
 
-    public String dataConfirmation(String name, int aired, String genres, Double duration, Double score, int num_episodes, String studio, String type) {
+    public String dataConfirmation(String name, int aired, String genres, double duration, double score, int num_episodes, String studio, String type) {
         List<String> options = new ArrayList<>();
         int option;
 

@@ -16,7 +16,7 @@ public class RegisterAnimeController {
         this.store = app.getCompany().getAniStore();
     }
 
-    public boolean create(String name, int aired, String genres, Double duration, Double score, int num_episodes, String studio, String type) {
+    public boolean create(String name, int aired, String genres, double duration, double score, int num_episodes, String studio, String type) {
         this.anime = this.store.create(name, aired, genres, duration, score, num_episodes, studio, type);
         return store.validate(anime);
     }
@@ -25,7 +25,4 @@ public class RegisterAnimeController {
         return store.save(anime);
     }
 
-    public Set<Anime> fuck() {
-        return store.getAll();
-    }
 }

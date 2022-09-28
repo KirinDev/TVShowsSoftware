@@ -2,14 +2,11 @@ package app.domain.store;
 
 import app.domain.model.Anime;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class AnimeStore {
 
-    private Set<Anime> store = new HashSet<>();
+    private List<Anime> store = new ArrayList<>();
 
     public AnimeStore() { }
 
@@ -25,8 +22,8 @@ public class AnimeStore {
         return anime != null ? this.store.remove(anime) : false;
     }
 
-    public Set<Anime> getAll() {
-        return Collections.unmodifiableSet(this.store);
+    public List<Anime> getAll() {
+        return this.store;
     }
 
     public boolean validate(Anime anime) {
