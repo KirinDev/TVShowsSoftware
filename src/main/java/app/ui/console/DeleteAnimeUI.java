@@ -23,13 +23,20 @@ public class DeleteAnimeUI implements Runnable {
         do {
             List<Anime> ani_lst = ctrl.listAllAnime();
             int counter = 1;
-            System.out.println("| Choose the anime you wish to delete |");
+            System.out.println("\n| Choose the anime you wish to delete |");
+
             for(Anime i : ani_lst) {
                 System.out.println(counter + ". " + i.getName());
             }
-            option = Utils.readIntegerFromConsole("\nOption: ");
+            System.out.println("\n0 - Cancel");
+            option = Utils.readIntegerFromConsole("Type your option: ");
+
             if(option > 0 && option <= ani_lst.size()) {
                 ctrl.delete(ani_lst.get(option - 1));
+            }else if(option == 0) {
+                break;
+            }else{
+                System.err.println("»» Error 101 : Option Invalid! Please try again ««");
             }
         }while(!success);
 

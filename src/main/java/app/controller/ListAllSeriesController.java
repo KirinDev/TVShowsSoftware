@@ -20,7 +20,7 @@ public class ListAllSeriesController {
 
     public List<SerieDTO> listAllSeries() {
         SerieStore store = app.getCompany().getSerStore();
-        Set<Serie> lst = store.getAll();
+        List<Serie> lst = store.getAll();
         return mapper.toDTO(lst);
     }
 }

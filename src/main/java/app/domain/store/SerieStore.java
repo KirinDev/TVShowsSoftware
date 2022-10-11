@@ -1,15 +1,12 @@
 package app.domain.store;
 
-import app.domain.model.Anime;
 import app.domain.model.Serie;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class SerieStore {
 
-    private Set<Serie> store = new HashSet<>();
+    private List<Serie> store = new ArrayList<>();
 
     public SerieStore() { }
 
@@ -25,8 +22,8 @@ public class SerieStore {
         return serie != null ? this.store.remove(serie) : false;
     }
 
-    public Set<Serie> getAll() {
-        return Collections.unmodifiableSet(this.store);
+    public List<Serie> getAll() {
+        return this.store;
     }
 
     public boolean validate(Serie serie) {

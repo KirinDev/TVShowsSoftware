@@ -22,7 +22,7 @@ public class DeleteAnimeController {
     }
 
     public List<Anime> listAllAnime() {
-        AnimeStore store = app.getCompany().getAniStore();
+        this.store = app.getCompany().getAniStore();
         return store.getAll();
     }
 

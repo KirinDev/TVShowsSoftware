@@ -1,15 +1,12 @@
 package app.domain.store;
 
-import app.domain.model.Anime;
 import app.domain.model.Movie;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class MovieStore {
 
-    private Set<Movie> store = new HashSet<>();
+    private List<Movie> store = new ArrayList<>();
 
     public MovieStore() { }
 
@@ -25,8 +22,8 @@ public class MovieStore {
         return movie != null ? this.store.remove(movie) : false;
     }
 
-    public Set<Movie> getAll() {
-        return Collections.unmodifiableSet(this.store);
+    public List<Movie> getAll() {
+        return this.store;
     }
 
     public boolean validate(Movie movie) {

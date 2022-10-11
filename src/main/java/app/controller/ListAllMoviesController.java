@@ -20,7 +20,7 @@ public class ListAllMoviesController {
 
     public List<MovieDTO> listAllMovies() {
         MovieStore store = app.getCompany().getMovStore();
-        Set<Movie> lst = store.getAll();
+        List<Movie> lst = store.getAll();
         return mapper.toDTO(lst);
     }
 }
