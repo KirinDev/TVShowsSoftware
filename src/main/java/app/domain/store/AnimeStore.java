@@ -49,6 +49,14 @@ public class AnimeStore {
         return false;
     }
 
+    public Anime getByName( String name ) {
+        for (Anime i : this.store) {
+            if (i.getName().equals(name))
+                return i;
+        }
+        return null;
+    }
+
     public boolean checkAired( int aired ) {
         return aired >= 1900 && aired <= 2023;
     }

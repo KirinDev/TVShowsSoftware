@@ -1,10 +1,7 @@
 package app.domain.model;
 
 import app.auth.AuthFacade;
-import app.domain.store.AnimeStore;
-import app.domain.store.MovieStore;
-import app.domain.store.SerieStore;
-import app.domain.store.TVShowStore;
+import app.domain.store.*;
 import org.apache.commons.lang3.StringUtils;
 
 public class Company {
@@ -16,6 +13,9 @@ public class Company {
     private AnimeStore aniStore;
     private MovieStore movStore;
     private SerieStore serStore;
+    private CompAnimeStore compAniStore;
+    private CompMovieStore compMovStore;
+    private CompSerieStore compSerStore;
 
     public Company(String designation) {
         if (StringUtils.isBlank(designation))
@@ -28,6 +28,9 @@ public class Company {
         this.aniStore = new AnimeStore();
         this.movStore = new MovieStore();
         this.serStore = new SerieStore();
+        this.compAniStore = new CompAnimeStore();
+        this.compMovStore = new CompMovieStore();
+        this.compSerStore = new CompSerieStore();
     }
 
     public String getDesignation() {
@@ -50,5 +53,17 @@ public class Company {
 
     public SerieStore getSerStore() {
         return this.serStore;
+    }
+
+    public CompAnimeStore getCompAniStore() {
+        return compAniStore;
+    }
+
+    public CompMovieStore getCompMovStore() {
+        return compMovStore;
+    }
+
+    public CompSerieStore getCompSerStore() {
+        return compSerStore;
     }
 }

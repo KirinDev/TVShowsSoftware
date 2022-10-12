@@ -49,6 +49,14 @@ public class SerieStore {
         return false;
     }
 
+    public Serie getByName(String name ) {
+        for (Serie i : this.store) {
+            if (i.getName().equals(name))
+                return i;
+        }
+        return null;
+    }
+
     public boolean checkAired( int aired ) {
         return aired >= 1900 && aired <= 2023;
     }

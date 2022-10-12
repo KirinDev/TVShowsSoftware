@@ -48,6 +48,14 @@ public class MovieStore {
         return false;
     }
 
+    public Movie getByName(String name ) {
+        for (Movie i : this.store) {
+            if (i.getName().equals(name))
+                return i;
+        }
+        return null;
+    }
+
     public boolean checkAired( int aired ) {
         return aired >= 1900 && aired <= 2023;
     }
