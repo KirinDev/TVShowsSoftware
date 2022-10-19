@@ -5,15 +5,16 @@ import app.ui.console.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserUI implements Runnable {
+public class UserSearchShowUI implements Runnable {
 
-    public UserUI() { }
+    public UserSearchShowUI() { }
 
     public void run() {
+
         List<MenuItem> options = new ArrayList<>();
-        options.add(new MenuItem("Add show to my list " , new UserAddShowUI()));
-        options.add(new MenuItem("List of shows " , new UserListShowsUI()));
-        options.add(new MenuItem("Search show by name " , new UserSearchShowUI()));
+        options.add(new MenuItem("Search anime " , new SearchAnimeUI() ));
+        options.add(new MenuItem("Search movie  " , new SearchMovieUI() ));
+        options.add(new MenuItem("Search serie  " , new SearchSerieUI() ));
 
         int option = 0;
         do {
@@ -23,7 +24,7 @@ public class UserUI implements Runnable {
                 if ( (option >= 0) && (option < options.size())) {
                     options.get(option).run();
                 }
-            } catch (Exception e){System.out.print("Invalid option! Try again");;}
+            } catch (Exception e){System.out.print("Invalid option! Try again");}
         }
         while (option != -1 );
     }

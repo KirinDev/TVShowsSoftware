@@ -53,7 +53,7 @@ public class App {
         this.authFacade.addUserRole(Constants.ROLE_ADMIN,Constants.ROLE_ADMIN);
         this.authFacade.addUserRole(Constants.ROLE_USER,Constants.ROLE_USER);
         this.authFacade.addUserWithRole("Main Administrator", "admin@shows.pt", "1811",Constants.ROLE_ADMIN);
-        this.authFacade.addUserWithRole("Software User", "weeb@shows.pt", "mommy milkers",Constants.ROLE_ADMIN);
+        this.authFacade.addUserWithRole("Software User", "weeb@shows.pt", "mommy milkers",Constants.ROLE_USER);
     }
 
     private static App singleton = null;
