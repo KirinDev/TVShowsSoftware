@@ -1,5 +1,9 @@
 package app.ui.console.utils;
 
+import app.mappers.dto.AnimeDTO;
+import app.mappers.dto.MovieDTO;
+import app.mappers.dto.SerieDTO;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.ParseException;
@@ -11,8 +15,7 @@ import java.util.logging.Logger;
 
 public class Utils {
 
-    static public String readLineFromConsole(String prompt)
-    {
+    static public String readLineFromConsole(String prompt) {
         try
         {
             System.out.println("\n" + prompt);
@@ -166,5 +169,47 @@ public class Utils {
         } while (value < 0 || value > list.size());
 
         return value - 1;
+    }
+
+    static public void printAnimeInfo(List<AnimeDTO> ani_lst) {
+
+        for (AnimeDTO i : ani_lst) {
+            System.out.println("\n===================");
+            System.out.println("| Name: " + i.getName());
+            System.out.println("| Aired: " + i.getAired());
+            System.out.println("| Genres: " + i.getGenres());
+            System.out.println("| Studio: " + i.getStudio());
+            System.out.println("| Type: " + i.getType());
+            System.out.println("| Duration: " + i.getDuration());
+            System.out.println("| Score: " + i.getScore());
+            System.out.println("| Number of episodes: " + i.getNum_episodes());
+            System.out.println("===================");
+        }
+    }
+
+    static public void printMovieInfo(List<MovieDTO> lst) {
+        for(MovieDTO i : lst) {
+            System.out.println("===================");
+            System.out.println("| Name: " + i.getName());
+            System.out.println("| Aired: " + i.getAired());
+            System.out.println("| Genres: " + i.getGenres());
+            System.out.println("| Duration: " + i.getDuration());
+            System.out.println("| Score: " + i.getScore());
+            System.out.println("===================");
+        }
+    }
+
+    static public void printSeriesInfo(List<SerieDTO> lst) {
+        for(SerieDTO i : lst) {
+            System.out.println("===================");
+            System.out.println("| Name: " + i.getName());
+            System.out.println("| Aired: " + i.getAired());
+            System.out.println("| Genres: " + i.getGenres());
+            System.out.println("| Duration: " + i.getDuration());
+            System.out.println("| Score: " + i.getScore());
+            System.out.println("| Number of episodes: " + i.getNum_episodes());
+            System.out.println("===================");
+        }
+
     }
 }
