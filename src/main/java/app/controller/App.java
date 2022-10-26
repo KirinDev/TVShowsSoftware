@@ -6,10 +6,6 @@ import app.domain.model.Company;
 import app.domain.shared.Constants;
 import app.properties.PropertiesCache;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Properties;
-
 public class App {
 
     private Company company;

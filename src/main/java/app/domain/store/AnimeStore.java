@@ -57,6 +57,25 @@ public class AnimeStore {
         return null;
     }
 
+    public List<Anime> orderAscByScore() {
+        List<Anime> orig_lst = this.store;
+        List<Anime> ord_lst = new ArrayList<>();
+
+        while(ord_lst.size() != this.store.size()) {
+            double min = 11;
+            Anime anime = null;
+            
+            for(Anime i : orig_lst) {
+                if( i.getScore() < min) {
+                    anime = i;
+                    min = i.getScore();
+                }
+            }
+            ord_lst.add(anime);
+        }
+        return ord_lst;
+    }
+
     public boolean checkAired( int aired ) {
         return aired >= 1900 && aired <= 2023;
     }
