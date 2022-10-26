@@ -14,11 +14,12 @@ public class ListShowsAscScoreController {
 
     public ListShowsAscScoreController() {
         this.app = App.getInstance();
+        this.mapper = new AnimeMapper();
     }
 
     public List<AnimeDTO> getOrderedListByScoreAsc() {
         AnimeStore store = this.app.getCompany().getAniStore();
         List<Anime> lst = store.orderAscByScore();
-        return mapper.toDTO(lst);
+        return this.mapper.toDTO(lst);
     }
 }

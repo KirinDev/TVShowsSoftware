@@ -20,7 +20,6 @@ public class ListShowsAscScoreUI implements Runnable {
 
         switch (this.show) {
             case 1 :
-                System.out.println("| List of Animes ordered by score (Ascendant) |");
                 List<AnimeDTO> lst = ctrl.getOrderedListByScoreAsc();
                 Utils.printAnimeInfo(lst);
                 break;

@@ -12,9 +12,9 @@ public class UserListShowsUI implements Runnable {
     public void run() {
 
         List<MenuItem> options = new ArrayList<>();
-        options.add(new MenuItem("Show all animes " , new ListAllAnimeUI() ));
-        options.add(new MenuItem("Show all movies " , new ListAllMoviesUI() ));
-        options.add(new MenuItem("Show all series " , new ListAllSeriesUI() ));
+        options.add(new MenuItem("Show all animes " , new ListAnimeTypeOrderUI() ));
+        options.add(new MenuItem("Show all movies " , new ListMovieTypeOrderUI() ));
+        options.add(new MenuItem("Show all series " , new ListSeriesTypeOrderUI() ));
 
         int option = 0;
         do {

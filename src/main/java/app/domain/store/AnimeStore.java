@@ -61,18 +61,27 @@ public class AnimeStore {
         List<Anime> orig_lst = this.store;
         List<Anime> ord_lst = new ArrayList<>();
 
-        while(ord_lst.size() != this.store.size()) {
+        do {
             double min = 11;
+            int count = 0;
+            int index = 0;
             Anime anime = null;
-            
+
             for(Anime i : orig_lst) {
+
                 if( i.getScore() < min) {
                     anime = i;
                     min = i.getScore();
+                    index = count;
                 }
+                count++;
             }
             ord_lst.add(anime);
-        }
+            orig_lst.remove(index);
+
+        }while(ord_lst.size() < this.store.size() + 1);
+
+
         return ord_lst;
     }
 
