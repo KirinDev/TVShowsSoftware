@@ -60,6 +60,7 @@ public class AnimeStore {
     public List<Anime> orderAscByScore() {
         List<Anime> orig_lst = this.store;
         List<Anime> ord_lst = new ArrayList<>();
+        int size = orig_lst.size();
 
         do {
             double min = 11;
@@ -79,8 +80,35 @@ public class AnimeStore {
             ord_lst.add(anime);
             orig_lst.remove(index);
 
-        }while(ord_lst.size() < this.store.size() + 1);
+        }while(ord_lst.size() < size );
 
+        return ord_lst;
+    }
+
+    public List<Anime> orderDesByScore() {
+        List<Anime> orig_lst = this.store;
+        List<Anime> ord_lst = new ArrayList<>();
+        int size = orig_lst.size();
+
+        do {
+            double max = 0;
+            int count = 0;
+            int index = 0;
+            Anime anime = null;
+
+            for(Anime i : orig_lst) {
+
+                if( i.getScore() > max) {
+                    anime = i;
+                    max = i.getScore();
+                    index = count;
+                }
+                count++;
+            }
+            ord_lst.add(anime);
+            orig_lst.remove(index);
+
+        }while(ord_lst.size() < size );
 
         return ord_lst;
     }

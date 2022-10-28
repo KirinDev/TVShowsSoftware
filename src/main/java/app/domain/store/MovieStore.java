@@ -56,6 +56,60 @@ public class MovieStore {
         return null;
     }
 
+    public List<Movie> orderAscByScore() {
+        List<Movie> orig_lst = this.store;
+        List<Movie> ord_lst = new ArrayList<>();
+
+        do {
+            double min = 11;
+            int count = 0;
+            int index = 0;
+            Movie movie = null;
+
+            for(Movie i : orig_lst) {
+
+                if( i.getScore() < min) {
+                    movie = i;
+                    min = i.getScore();
+                    index = count;
+                }
+                count++;
+            }
+            ord_lst.add(movie);
+            orig_lst.remove(index);
+
+        }while(ord_lst.size() < this.store.size() + 1);
+
+        return ord_lst;
+    }
+
+    public List<Movie> orderDesByScore() {
+        List<Movie> orig_lst = this.store;
+        List<Movie> ord_lst = new ArrayList<>();
+
+        do {
+            double max = 0;
+            int count = 0;
+            int index = 0;
+            Movie movie = null;
+
+            for(Movie i : orig_lst) {
+
+                if( i.getScore() > max) {
+                    movie = i;
+                    max = i.getScore();
+                    index = count;
+                }
+                count++;
+            }
+            ord_lst.add(movie);
+            orig_lst.remove(index);
+
+        }while(ord_lst.size() < this.store.size() + 1);
+
+        return ord_lst;
+    }
+
     public boolean checkAired( int aired ) {
         return aired >= 1900 && aired <= 2023;
     }
