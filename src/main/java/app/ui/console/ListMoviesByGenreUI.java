@@ -57,7 +57,7 @@ public class ListMoviesByGenreUI implements Runnable {
             }
 
             case 7 -> {
-                System.out.println("\n| List of Movies of Romance genre |");
+                System.out.println("\n| List of Movies of romance genre |");
                 List<MovieDTO> lst = ctrl.getMovieListByGenre("Romance");
                 Utils.printMovieInfo(lst);
             }
