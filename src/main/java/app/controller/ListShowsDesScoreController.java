@@ -5,7 +5,7 @@ import app.domain.model.Movie;
 import app.domain.model.Serie;
 import app.domain.store.AnimeStore;
 import app.domain.store.MovieStore;
-import app.domain.store.SerieStore;
+import app.domain.store.SeriesStore;
 import app.mappers.AnimeMapper;
 import app.mappers.MovieMapper;
 import app.mappers.SerieMapper;
@@ -42,7 +42,7 @@ public class ListShowsDesScoreController {
     }
 
     public List<SerieDTO> getOrderedListByScoreDesSeries() {
-        SerieStore store = this.app.getCompany().getSerStore();
+        SeriesStore store = this.app.getCompany().getSerStore();
         List<Serie> lst = store.orderDesByScore();
         return this.ser_mapper.toDTO(lst);
     }

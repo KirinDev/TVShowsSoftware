@@ -113,6 +113,15 @@ public class AnimeStore {
         return ord_lst;
     }
 
+    public List<Anime> listAnimeByGenre(String genre) {
+        List<Anime> lst = new ArrayList<>();
+        for( Anime i : this.store ) {
+            if( i.getGenres().equals(genre) )
+                lst.add(i);
+        }
+        return lst;
+    }
+
     public boolean checkAired( int aired ) {
         return aired >= 1900 && aired <= 2023;
     }

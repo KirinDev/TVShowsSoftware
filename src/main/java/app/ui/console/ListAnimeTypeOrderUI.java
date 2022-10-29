@@ -16,6 +16,7 @@ public class ListAnimeTypeOrderUI implements Runnable {
         List<MenuItem> options = new ArrayList<>();
         options.add(new MenuItem("Random " , new ListAllAnimeUI() ));
         options.add(new MenuItem("By Score " , new ListAnimeAscOrDesUI() ));
+        options.add(new MenuItem("By Genre " , new ListAnimesTypeGenreUI() ));
 
         int option = 0;
         do {

@@ -1,16 +1,14 @@
 package app.domain.store;
 
-import app.domain.model.Anime;
-import app.domain.model.Movie;
 import app.domain.model.Serie;
 
 import java.util.*;
 
-public class SerieStore {
+public class SeriesStore {
 
     private List<Serie> store = new ArrayList<>();
 
-    public SerieStore() { }
+    public SeriesStore() { }
 
     public Serie create(String name, int aired, String genres, Double duration, Double score, int num_episodes) {
         return new Serie(name, aired, genres, duration, score, num_episodes);
@@ -111,6 +109,15 @@ public class SerieStore {
         }while(ord_lst.size() < this.store.size() + 1);
 
         return ord_lst;
+    }
+
+    public List<Serie> listSeriesByGenre(String genre) {
+        List<Serie> lst = new ArrayList<>();
+        for( Serie i : this.store ) {
+            if( i.getGenres().equals(genre) )
+                lst.add(i);
+        }
+        return lst;
     }
 
     public boolean checkAired( int aired ) {

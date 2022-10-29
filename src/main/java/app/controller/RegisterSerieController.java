@@ -1,13 +1,13 @@
 package app.controller;
 
 import app.domain.model.Serie;
-import app.domain.store.SerieStore;
+import app.domain.store.SeriesStore;
 
 public class RegisterSerieController {
 
     private App app;
     private Serie serie;
-    private SerieStore store;
+    private SeriesStore store;
 
     public RegisterSerieController() {
         this.app = App.getInstance();
