@@ -1,14 +1,14 @@
 package app.controller;
 
 import app.domain.model.Serie;
-import app.domain.store.SerieStore;
+import app.domain.store.SeriesStore;
 
 import java.util.List;
 
 public class DeleteSerieController {
 
     private App app;
-    private SerieStore store;
+    private SeriesStore store;
 
     public DeleteSerieController() {
         this.app = App.getInstance();

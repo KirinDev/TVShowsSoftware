@@ -24,7 +24,7 @@ public class UserListShowsUI implements Runnable {
                 if ( (option >= 0) && (option < options.size())) {
                     options.get(option).run();
                 }
-            } catch (Exception e){System.out.print("Invalid option! Try again");;}
+            } catch (Exception e){System.out.print("Invalid option! Try again");}
         }
         while (option != -1 );
     }

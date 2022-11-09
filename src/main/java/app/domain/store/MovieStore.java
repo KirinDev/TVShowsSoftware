@@ -110,6 +110,15 @@ public class MovieStore {
         return ord_lst;
     }
 
+    public List<Movie> listMoviesByGenre(String genre) {
+        List<Movie> lst = new ArrayList<>();
+        for( Movie i : this.store ) {
+            if( i.getGenres().equals(genre) )
+                lst.add(i);
+        }
+        return lst;
+    }
+
     public boolean checkAired( int aired ) {
         return aired >= 1900 && aired <= 2023;
     }

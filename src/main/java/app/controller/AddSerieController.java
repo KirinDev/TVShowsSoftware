@@ -2,13 +2,13 @@ package app.controller;
 
 import app.domain.model.Serie;
 import app.domain.store.CompSerieStore;
-import app.domain.store.SerieStore;
+import app.domain.store.SeriesStore;
 
 public class AddSerieController {
 
     private App app;
     private CompSerieStore store;
-    private SerieStore serStore;
+    private SeriesStore serStore;
 
     public AddSerieController() {
         this.app = App.getInstance();

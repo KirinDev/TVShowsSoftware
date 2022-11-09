@@ -1,7 +1,7 @@
 package app.controller;
 
 import app.domain.model.Serie;
-import app.domain.store.SerieStore;
+import app.domain.store.SeriesStore;
 
 public class SearchSerieController {
 
@@ -12,7 +12,7 @@ public class SearchSerieController {
     }
 
     public Serie searchSerie(String name) {
-        SerieStore store = this.app.getCompany().getSerStore();
+        SeriesStore store = this.app.getCompany().getSerStore();
         return store.getByName(name);
     }
 }

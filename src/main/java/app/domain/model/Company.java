@@ -12,7 +12,7 @@ public class Company {
     private TVShowStore tvsStore;
     private AnimeStore aniStore;
     private MovieStore movStore;
-    private SerieStore serStore;
+    private SeriesStore serStore;
     private CompAnimeStore compAniStore;
     private CompMovieStore compMovStore;
     private CompSerieStore compSerStore;
@@ -27,7 +27,7 @@ public class Company {
         this.tvsStore = new TVShowStore();
         this.aniStore = new AnimeStore();
         this.movStore = new MovieStore();
-        this.serStore = new SerieStore();
+        this.serStore = new SeriesStore();
         this.compAniStore = new CompAnimeStore();
         this.compMovStore = new CompMovieStore();
         this.compSerStore = new CompSerieStore();
@@ -51,7 +51,7 @@ public class Company {
         return this.movStore;
     }
 
-    public SerieStore getSerStore() {
+    public SeriesStore getSerStore() {
         return this.serStore;
     }
 
