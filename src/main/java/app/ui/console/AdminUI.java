@@ -12,6 +12,7 @@ public class AdminUI implements Runnable {
     public void run() {
 
         List<MenuItem> options = new ArrayList<>();
+        options.add(new MenuItem("Register Admin account " , new RegisterAdminAccUI() ));
         options.add(new MenuItem("Register a TV show " , new AdminRegisterUI() ));
         options.add(new MenuItem("Delete a TV show " , new AdminDeleteUI() ));
         options.add(new MenuItem("Show list of shows " , new AdminListShowsUI() ));

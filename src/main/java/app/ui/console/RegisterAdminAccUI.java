@@ -1,14 +1,14 @@
 package app.ui.console;
 
-import app.controller.RegisterAccountController;
+import app.controller.RegisterAdminAccController;
 import app.ui.console.utils.Utils;
 
-public class RegisterAccountUI implements Runnable{
+public class RegisterAdminAccUI implements Runnable {
 
-    private RegisterAccountController ctrl;
+    private RegisterAdminAccController ctrl;
 
-    public RegisterAccountUI() {
-        ctrl = new RegisterAccountController();
+    public RegisterAdminAccUI() {
+        ctrl = new RegisterAdminAccController();
     }
 
     public void run() {
@@ -17,7 +17,7 @@ public class RegisterAccountUI implements Runnable{
 
         boolean success = false;
         do {
-            System.out.println("\n| User Account Registration |");
+            System.out.println("\n| Admin Account Registration |");
             name = Utils.readLineFromConsole("Name: ");
             email = Utils.readLineFromConsole("Email: ");
             pwd = Utils.readLineFromConsole("Password: ");
@@ -32,5 +32,6 @@ public class RegisterAccountUI implements Runnable{
                 System.err.println("»» Error: Email or Password invalid! Please try again ««");
             }
         }while(!success);
+
     }
 }
