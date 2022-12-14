@@ -3,6 +3,7 @@ package app.ui.console;
 import app.controller.SearchAnimeController;
 import app.domain.model.Anime;
 import app.ui.console.utils.Utils;
+import org.json.JSONObject;
 
 public class SearchAnimeUI implements Runnable {
 
@@ -19,19 +20,17 @@ public class SearchAnimeUI implements Runnable {
             System.out.println("\n| Searching anime... |");
             String name = Utils.readLineFromConsole("Insert name: ");
 
+            JSONObject data = ctrl.searchAnime(name);
 
-            Anime anime = ctrl.searchAnime(name);
-
-            if( anime != null ) {
+            if( data != null ) {
                 System.out.println("\n===================");
-                System.out.println("| Name: " + anime.getName());
-                System.out.println("| Aired: " + anime.getAired());
-                System.out.println("| Genres: " + anime.getGenres());
-                System.out.println("| Studio: " + anime.getStudio());
-                System.out.println("| Type: " + anime.getType());
-                System.out.println("| Duration: " + anime.getDuration());
-                System.out.println("| Score: " + anime.getScore());
-                System.out.println("| Number of episodes: " + anime.getNum_episodes());
+                System.out.println("| Title: " + data.getString("canonicalTitle"));
+                System.out.println("| Aired: " + data.getString("startDate"));
+                System.out.println("| Type: " + data.getString("subtype"));
+                System.out.println("| Duration: " + data.getInt("episodeLength"));
+                System.out.println("| Average Score: " + data.getString("averageRating"));
+                System.out.println("| Number of episodes: " + data.getInt("episodeCount"));
+                System.out.println("| Synopsis: " + "\n"+data.getString("synopsis"));
                 System.out.println("===================");
                 success = true;
             }else{
