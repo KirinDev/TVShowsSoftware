@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.MainUI">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0">
+               <image>
+                  <Image url="@../img/mainBackground.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="185.0" layoutY="75.0" prefHeight="63.0" prefWidth="232.0" text="BONFIRE" textAlignment="CENTER" textFill="#f2b6b6">
+               <font>
+                  <Font name="Mistral" size="58.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="141.0" fitWidth="137.0" layoutX="417.0" layoutY="169.0">
+               <image>
+                  <Image url="@../img/mainKnight.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="122.0" fitWidth="94.0" layoutX="486.0" layoutY="229.0">
+               <image>
+                  <Image url="@../img/mainBonfire.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="loginButton" onAction="#login" onMouseExited="#loginMouseExit" onMouseMoved="#loginMouseOver" layoutX="233.0" layoutY="179.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="137.0" style="-fx-background-radius: 30; -fx-background-color: #FABE4C;" text="Login">
+               <font>
+                  <Font name="Cooper Black" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="registerButton" onAction="#register" onMouseExited="#registerMouseExit" onMouseMoved="#registerMouseOver" layoutX="232.0" layoutY="229.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="137.0" style="-fx-background-radius: 30; -fx-background-color: #FABE4C;" text="Register">
+               <font>
+                  <Font name="Cooper Black" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="devButton" onAction="#dev" onMouseExited="#devMouseExit" onMouseMoved="#devMouseOver" layoutX="233.0" layoutY="279.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="137.0" style="-fx-background-radius: 30; -fx-background-color: #FABE4C;" text="Dev Team">
+               <font>
+                  <Font name="Cooper Black" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
